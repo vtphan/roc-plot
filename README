@@ -1,0 +1,5 @@
+Plot precision and recall for multiple (comparative) data points.
+
+Requires matplotlib, numpy.
+
+Likely needs tweaking to display specific data sets nicely.
