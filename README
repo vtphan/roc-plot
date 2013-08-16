@@ -1,4 +1,4 @@
-Plot precision and recall for multiple (comparative) data points.
+Plot precision and recall for multiple (comparative) data points.  Output png-format plot.
 
 Requires matplotlib, numpy.
 
