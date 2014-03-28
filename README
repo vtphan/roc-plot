@@ -1,17 +1,20 @@
-usage: precision_recall.py [-h] [-xmin XMIN] [-ymin YMIN] [-xinc XINC]
-                           [-yinc YINC] [-scaled] [-figsize w h]
+usage: precision_recall.py [-h] [-xmin XMIN] [-xinc XINC] [-xlabel XLABEL]
+                           [-ymin YMIN] [-yinc YINC] [-ylabel YLABEL]
+                           [-scaled] [-figsize w h]
                            file_name
 
 Plot roc curve.
 
 positional arguments:
-  file_name     file containing precision and recall values
+  file_name       file containing precision and recall values
 
 optional arguments:
-  -h, --help    show this help message and exit
-  -xmin XMIN    x_min
-  -ymin YMIN    x_min
-  -xinc XINC    x increment
-  -yinc YINC    y increment
-  -scaled       scaled x and y axes
-  -figsize w h  figure width and height in inches; default: 8 6.
+  -h, --help      show this help message and exit
+  -xmin XMIN      x_min
+  -xinc XINC      x increment
+  -xlabel XLABEL  x label
+  -ymin YMIN      x_min
+  -yinc YINC      y increment
+  -ylabel YLABEL  x label
+  -scaled         scaled x and y axes
+  -figsize w h    figure width and height in inches; default: 8 6.
