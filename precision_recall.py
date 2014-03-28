@@ -18,9 +18,11 @@ from numpy import arange
 import argparse
 
 x_min = 0.5
-y_min = 0.5
 x_inc = 0.05
+x_label = 'Recall'
+y_min = 0.5
 y_inc = 0.05
+y_label = 'Precision'
 scaled = False
 figsize = (8,6)
 
@@ -35,8 +37,8 @@ def plot_roc(title, input, outfile):
    if scaled:
       ax.axis('scaled')
    ax.set_title(title)
-   ax.set_xlabel('Recall')
-   ax.set_ylabel('Precision')
+   ax.set_xlabel(x_label)
+   ax.set_ylabel(y_label)
    ax.grid(True)
    ax.set_xticks(arange(int(1.0/x_inc + 1)) * x_inc)
    ax.set_yticks(arange(int(1.0/y_inc + 1)) * y_inc)
@@ -104,9 +106,11 @@ if __name__ == '__main__':
    parser = argparse.ArgumentParser(description='Plot roc curve.')
    parser.add_argument('file_name', help='file containing precision and recall values')
    parser.add_argument('-xmin', help='x_min', type=float, default=0)
-   parser.add_argument('-ymin', help='x_min', type=float, default=0)
    parser.add_argument('-xinc', help='x increment', type=float, default=0.1)
+   parser.add_argument('-xlabel', help='x label', default=x_label)
+   parser.add_argument('-ymin', help='x_min', type=float, default=0)
    parser.add_argument('-yinc', help='y increment', type=float, default=0.1)
+   parser.add_argument('-ylabel', help='x label', default=y_label)
    parser.add_argument('-scaled', help='scaled x and y axes', action='store_true')
    parser.add_argument("-figsize", type=float, nargs=2, metavar=('w', 'h'),
       help='figure width and height in inches; default: %s %s.' % figsize)
@@ -114,9 +118,11 @@ if __name__ == '__main__':
    args = parser.parse_args()
    data_file = args.file_name
    x_min = args.xmin
-   y_min = args.ymin
    x_inc = args.xinc
+   x_label = args.xlabel
+   y_min = args.ymin
    y_inc = args.yinc
+   y_label = args.ylabel
    scaled = args.scaled
    if args.figsize:
       figsize = args.figsize
